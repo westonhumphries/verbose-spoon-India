@@ -21,7 +21,7 @@ $('#btnLoadData').click(function() {
             //loads first name into my first input box (in example #1)
             
             
-            $("#noSpaces").val(data.email);
+            $("#noSpaces").val(data.name);
             console.log(data.language);
             
             $("#pwd").val(data.pwd);
