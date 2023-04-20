@@ -9,8 +9,8 @@ $('#btnLoadData').click(function() {
 //     let jsonURL = "demo.json";
 
     // let jsonURL = "https://github.com/westonhumphries/verbose-spoon-India/blob/main/demo.json";
-    // let jsonURL = "https://westonhumphries.github.io/verbose-spoon-India/demo.json";
-    let jsonURL = "../demo.json";
+    let jsonURL = "https://westonhumphries.github.io/verbose-spoon-India/demo.json";
+    //let jsonURL = "../demo.json";
 
     $.ajax({
         url: jsonURL,
