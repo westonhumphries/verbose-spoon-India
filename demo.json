@@ -1,6 +1,7 @@
 {
     "email": "Eric@southpark.com",
     "pwd": "password",
-    "radio1": "sith"
+    "remember": "remember", 
+    "force": "other"
 
 }

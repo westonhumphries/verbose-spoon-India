@@ -2,8 +2,6 @@ $(function () {
   //what radio value did they select?
 
  
-
-
   let userJSON = {
     email: "Weston email address",
   };
@@ -215,7 +213,66 @@ $(function () {
     }
   });
 
-  
+  //loading in JSON data from w3c:https://www.w3schools.com/jquery/ajax_getjson.asp
+  $("#DONOTFIRETHISCODE").click(function () {
+    console.log("clicked");
+
+    // let jsonURL = "https://www.w3schools.com/jquery/demo_ajax_json.js";
+
+    // let jsonURL = "https://barrycumbie.github.io/376-india-lab/demo.json?callback=?";
+
+    let jsonURL = "../demo.json";
+
+    // #1 failed:
+    // let ajxReq = $.ajax({
+    //     url: jsonURL,
+    //     contentType: 'application/json',
+    //     dataType: 'json',
+    //     headers: {
+    //         "Accept": "application/json",
+    //         'Access-Control-Allow-Origin': jsonURL
+
+    //     }
+    // });
+
+    // #2 failed
+    // $.getJSON(jsonURL, function(result) {
+    //     console.log(JSON.stringify(res));
+
+    //     $.each(result, function(i, field) {
+    //         console.log(i);
+    //         $("#dataContainer").append(field + " ");
+    //     });
+    // });
+
+    // #3
+    // $.getJSON(jsonURL + 'jsonp?callback=?', {}, function(data) {     console.log(data);     }); //get JSON
+
+    // #4
+    $.ajax({
+      url: jsonURL,
+
+      // The name of the callback parameter, as specified by the YQL service
+      jsonp: "callback",
+
+      // Tell jQuery we're expecting JSONP
+      dataType: "jsonp",
+
+      // Tell YQL what we want and that we want JSON
+      data: {
+        format: "json",
+      },
+
+      // Work with the response
+      success: function (response) {
+        console.log(response); // server response
+      },
+    });
+
+    //end of btn click event
+  });
+
+  // https://www.educba.com/jquery-ajax-headers/
   //         <script type = "text/javascript">
   // $(document).ready( function () {
   // $('#Btn').click( function(){

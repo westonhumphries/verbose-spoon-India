@@ -9,7 +9,8 @@ $('#btnLoadData').click(function() {
 //     let jsonURL = "demo.json";
 
     // let jsonURL = "https://github.com/westonhumphries/verbose-spoon-India/blob/main/demo.json";
-    let jsonURL = "https://westonhumphries.github.io/verbose-spoon-India/demo.json";
+    // let jsonURL = "https://westonhumphries.github.io/verbose-spoon-India/demo.json";
+    let jsonURL = "../demo.json";
 
     $.ajax({
         url: jsonURL,
@@ -20,17 +21,26 @@ $('#btnLoadData').click(function() {
             
             //loads first name into my first input box (in example #1)
             
-            /*
-            $("#noSpaces").val(data.email);
+            
+            $("#noSpaces").val(data.name);
             console.log(data.language);
-            */
+            
             $("#pwd").val(data.pwd);
             console.log(data.language);
 
 
 
             $('input[type=checkbox]').each(function () {
-                if (data.language === $(this).val())
+                if (data.remember === $(this).val())
+                {
+                  $(this).prop('checked', true)
+                    console.log($(this));
+               }
+
+            });
+
+            $('input[type=radio]').each(function () {
+                if (data.force === $(this).val())
                 {
                   $(this).prop('checked', true)
                     console.log($(this));
