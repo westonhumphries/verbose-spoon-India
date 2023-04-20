@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hotel Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    >
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="container-fluid">
+
+  <!--  nav bor  -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" target="storyCard" href="https://gist.github.com/barrycumbie/892372aa45634b0a28b7354ea076bac6">Hotel Story Card</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="foxtrotRepo" href="https://github.com/westonhumphries/improved-octo-rotary-phone-Hotel">Hotel Repo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="pageVal" href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fwestonhumphries.github.io%2Fimproved-octo-rotary-phone-Hotel%2F%3Femail%3D%26pswd%3D%26optradio%3Dother">Check this page's validation</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <div class="row">
+      <div class="col-md-6 offset-md-3 card mt-3">
+        <h2 class="card-title">What Lightsaber color will you choose?</h2>
+        <h3 class="card-title" >Enter your info below and select the Saber of your choice. </h3>
+        <form>
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              name="email"
+            >
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pwd"
+              placeholder="Enter password"
+              name="pswd"
+            >
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember">
+              Remember me
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio1"
+              name="optradio"
+              value="jedi"
+            >Jedi
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio2"
+              name="optradio"
+              value="sith"
+            >Sith
+            <label class="form-check-label" for="radio2"></label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="radio3"
+              name="optradio"
+              value="other"
+            >Other
+            <label class="form-check-label" for="radio3"></label>
+          </div>
+
+          <select
+            id="letterWordsSelect"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option selected disabled>Pick your Lightsaber</option>
+          </select>
+
+          <button id="submitForm" type="submit" class="btn btn-secondary">
+            Submit
+          </button>
+          <button id="resetForm" class="btn btn-outline-secondary" onClick="refreshPage();">
+              Reset Form</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+    <div class="row p-1.5 m-1.5">
+      <!--   no spaces blur  -->
+      <div class="col-md-5 card">
+        <div class="card-body">
+          <h4 class="card-title">What would your Jedi/Sith name be?</h4>
+          
+          <label for="noSpaces" class="form-label">Name goes here</label>
+          <input
+            id="noSpaces"
+            class="form-control"
+            type="text"
+            placeholder="Enter User Name (no spaces)"
+            name="noSpaces"
+          />
+          <!-- this is where the validation will appear, the .next() dom object <p> -->
+          <p class="card-footer"></p>
+        </div>
+        <p></p>
+      </div>
+
+      <!-- only numbers keyup (or keydown)   -->
+      <div class="col-md-5 m-l-2 card">
+        <div class="card-body">
+          <h4 class="card-title">How many battle droids does it take to "take down a jedi"?</h4>
+          <h5>Only numbers allowed.</h5>
+
+          <label for="noAlpha" class="form-label">Hint: It is well over 100 </label>
+          <input
+            id="noAlpha"
+            class="form-control"
+            type="text"
+            placeholder="Enter Account Number (only numbers)"
+            name="noAlpha"
+          />
+          <!-- this is where the validation will appear, the .next() dom object <p> -->
+          <p class="card-footer"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 offset-md-1 card">
+        <div class="card-body">
+          <h4 class="card-title">Example #3.</h4>
+          <h5>only allow alpha on(input)</h5>
+
+          <label for="noNumbers" class="form-label">User Name</label>
+          <input
+            id="noNumbers"
+            class="form-control"
+            type="text"
+            placeholder="Enter User Name (no numbers)"
+            name="noNumbers"
+          />
+          <!-- this is where the validation will appear, the .next() dom object <p> -->
+          <p class="card-footer"></p>
+        </div>
+      </div>
+
+      <div class="col-md-5 offset-md-1 card">
+        <div class="card-body">
+          <h4 class="card-title">Example #4.</h4>
+          <h5>same as #3 w/keydown</h5>
+
+          <label for="noNumbersDown" class="form-label">User Name</label>
+          <input
+            id="noNumbersDown"
+            class="form-control"
+            type="text"
+            placeholder="Enter User Name (no numbers)"
+            name="noNumbersDown"
+          />
+          <!-- this is where the validation will appear, the .next() dom object <p> -->
+          <p class="card-footer"></p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

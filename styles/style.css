@@ -1,0 +1,23 @@
+/* styles go here */
+
+body{
+    font-family: 'Abril Fatface', cursive;
+}
+
+body{
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wallpapersafari.com%2F33%2F42%2FAvc0xl.png&f=1&nofb=1&ipt=b719426fdcdaa909beefa4af4451371857e7d4f88fb0bdb9afb25892dee1128b&ipo=images');
+     
+   }
+
+h2{
+    color:red
+}
+
+
+h3{
+    color: blue
+}
+
+.card {
+    margin: 0.5em;
+  }
