@@ -86,46 +86,32 @@ $(function () {
 
   //my array of petNames
   //its a nested array, meaning, item 0 "cat" has an array in the item
-  //this is used for the "dependent inputs" in example #5
-  let petNames = [
-    ["cat", ["Jonas", "Salvador", "Cheezer", "Captain Fluffy"]],
-    ["dog", ["Earl", "Pop Tart", "Dawg"]],
-    ["mouse", ["Squeakers"]],
-    ["hampster", ["Fluffz", "Chubbz"]],
-    ["kuola", ["Wally", "Princess Pickles"]],
-    ["frog", ["Dennis Hopper", "Frank"]],
-    ["bear", ["Barry"]],
-  ];
+  //this is used for the "dependent inputs" in example #
 
   //example #1 code: ensures no spaces on blur
   //blur = when user clicks out of that DOM element (in this case it is a text input)
-  $("#noSpaces").blur(function () {
-    //first grab the value from the textbox and put in a variable
-    let inputVal = $(this).val();
-    //initialize an string variable that represents a space
-    let strSpace = " ";
-    //found this online, initialize a variable to count number of spaces in a string
-    //takes the variable of the input and runs the split() method
-    //which is an array method to chop it up whenever it finds the search parameter, in the case a space (" ")
-    let spaceCount = inputVal.split(" ").length - 1;
 
-    console.log(spaceCount);
-    if (spaceCount === 0) {
-      $(this).next().text("all good");
-    } else if (spaceCount > 0) {
-      $(this).next().text("no spaces allowed in User Name");
-    }
-  });
 
   $("#noAlpha").keyup(function (e) {
     e.preventDefault();
     this.value = this.value.replace(/[^0-9\.]/g, "");
-    $(this).next().text("remember, no alpha!");
+    // $(this).next().text("remember, no alpha!" + ": " + this.value);
 
-    if (this.value < 1000) {
-      return ["Try again"];
-    } else (this.value > 1000); {
-      return ["You are right. They say it will take 1000 or more to take down a jedi"];
+
+    // $(this).next().text(typeof this.value)); 
+    console.log(typeof Number(this.value)); 
+
+    if (Number(this.value) < 1000) {
+      // return ["Try again"];
+      $(this).next().text("rasdfsdfasdemember, no alpha!" + ": " + this.value);
+      console.log(`here`, this.value);
+
+    } else if (Number(this.value) > 1000) {
+      // return ["You are right. They say it will take 1000 or more to take down a Jedi"];
+
+      console.log(`here in else`, this.value);
+      $(this).next().text("rYou are right. They say it will take 1000 or more to take down a Jedi" + ": " + this.value);
+
     }
   });
 
