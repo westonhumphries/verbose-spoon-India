@@ -8,17 +8,17 @@ $('#btnLoadData').click(function() {
 
 //     let jsonURL = "demo.json";
 
-    let jsonURL = "https://barrycumbie.github.io/376-india-lab/demo.json";
+    let jsonURL = "https://github.com/westonhumphries/verbose-spoon-India/blob/main/demo.json";
 
     $.ajax({
         url: jsonURL,
         dataType: "json",
         success: function(data) {
             //can log either the entire data or invoke specific properties data.zipCode...
-            console.log(data.firstName);
+            console.log(data.email);
             
             //loads first name into my first input box (in example #1)
-            $("#noSpaces").val(data.firstName);
+            $("#noSpaces").val(data.email);
             console.log(data.language);
 
             $('input[type=checkbox]').each(function () {
