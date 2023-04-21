@@ -57,7 +57,6 @@
               type="email"
               class="form-control"
               id="email"
-              id="name"
               placeholder="Enter email"
               name="email"
             >
@@ -119,7 +118,8 @@
             <option selected disabled>Pick your Lightsaber</option>
           </select>
 
-          <button id="submitForm" type="submit" class="btn btn-secondary">
+        
+          <button id="submitForm" type="submit" class="btn btn-secondary" onClick="submitButton" >
             Submit
           </button>
           <button id="resetForm" class="btn btn-outline-secondary" onClick="refreshPage();">
@@ -144,7 +144,7 @@
             type="text"
             placeholder="Enter your Jedi name"
             name="noSpaces"
-          />
+          >
           <!-- this is where the validation will appear, the .next() dom object <p> -->
           <p class="card-footer"></p>
         </div>
@@ -164,7 +164,7 @@
             type="text"
             placeholder="Guess the ammount (Only numbers allowed)"
             name="noAlpha"
-          />
+          >
           <!-- this is where the validation will appear, the .next() dom object <p> -->
           <p class="card-footer"></p>
         </div>
@@ -184,7 +184,7 @@
             type="text"
             placeholder="Enter User Name (no numbers)"
             name="noNumbers"
-          />
+          >
           <!-- this is where the validation will appear, the .next() dom object <p> -->
           <p class="card-footer"></p>
         </div>
@@ -192,19 +192,20 @@
 
       <div class="col-md-5 offset-md-1 card">
         <div class="card-body">
-          <h4 class="card-title">Example #4.</h4>
-          <h5>same as #3 w/keydown</h5>
-
-          <label for="noNumbersDown" class="form-label">User Name</label>
+          <h4 class="card-title">What planet would you live on?</h4>
+          <label for="noNumbersDown" class="form-label"></label>
           <input
             id="noNumbersDown"
             class="form-control"
             type="text"
-            placeholder="Enter User Name (no numbers)"
+            placeholder="Enter you favorite planet"
             name="noNumbersDown"
-          />
+          >
           <!-- this is where the validation will appear, the .next() dom object <p> -->
           <p class="card-footer"></p>
+
+
+
         </div>
       </div>
     </div>
