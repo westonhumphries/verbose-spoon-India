@@ -106,7 +106,7 @@ $(function () {
     // $(this).next().text(typeof this.value)); 
     console.log(typeof Number(this.value)); 
 
-    if (Number(this.value) < 1000) {
+    if (Number(this.value) < 999) {
       // return ["Try again"];
       $(this).next().text("Try again the number is higher than this." + ": " + this.value);
       console.log(`here`, this.value);
